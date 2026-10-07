@@ -1,0 +1,38 @@
+{
+  "name": "dsh-trae-queue",
+  "version": "0.1.0",
+  "description": "Trae queue state in the dsh settings panel and sidebar foot: the requests CLIProxyAPI is currently holding in Trae's upstream queue, their live position, how long they have waited, and how the recent ones ended",
+  "type": "module",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node --test lib/index.test.js"
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}

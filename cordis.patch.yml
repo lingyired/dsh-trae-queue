@@ -1,0 +1,13 @@
+# dsh-trae-queue bundle patch: one row mounts BOTH halves — the Host half
+# registers the loopback-guarded /api/trae/queue route, and the client module
+# system serves lib/client.js into the boot graph as the "Trae · 排队" settings
+# section plus a sidebar-foot indicator that only appears while a request is
+# really sitting in Trae's upstream queue.
+- insert:
+    - id: trae-queue
+      name: 'dsh-trae-queue'
+      config:
+        # Explicit for discoverability; both are the built-in defaults, so
+        # deleting this block changes nothing.
+        baseUrl: 'http://127.0.0.1:8317'
+        keysPath: '/Users/lingsmbp/Library/Application Support/CLIProxyAPI/keys.env'
